@@ -4,4 +4,4 @@ venv
 .idea
 .ipynb_checkpoints
 Write-up.ipynb
-outputs
+folder/ outputs

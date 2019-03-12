@@ -10,7 +10,7 @@ env = Environment(
 
 #Use this to assemble the templaters
 base_template = env.get_template("report.html")
-table_section_template = env.get_template("tabel_section.html")
+table_section_template = env.get_template("table_section.html")
 
 #Content to be published 
 title = "Model Report"

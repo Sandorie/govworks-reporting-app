@@ -1,7 +1,7 @@
 from jinja2 import FileSystemLoader, Environment
 
 # Content to be published
-content = "Whatever Name"
+content = "Whatever_Name"
 
 # Configure Jinja and ready the template
 env = Environment(
@@ -22,5 +22,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
 

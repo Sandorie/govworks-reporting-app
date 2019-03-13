@@ -32,7 +32,7 @@ def main():
     Render a template and write it to file.
     :return:
     """
-    with open("/outputs/report.html", "w") as f:
+    with open("outputs/report.html", "w") as f:
         f.write(base_template.render(
             title=title,
             sections=sections

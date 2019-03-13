@@ -1,8 +1,9 @@
 from jinja2 import FileSystemLoader, Environment
 
+'''
 # Content to be published
 content = "Govworks_Reporting_Tool"
-
+'''
 # Configure Jinja and ready the template
 env = Environment(
     loader=FileSystemLoader(searchpath="templates")
@@ -31,13 +32,12 @@ def main():
     Entry point for the script.
     Render a template and write it to file.
     :return:
-   """ """
+   """ 
     with open("outputs/report.html", "w") as f:
         f.write(base_template.render(
             title=title,
             sections=sections
         ))
-"""
 
 if __name__ == "__main__":
     main()

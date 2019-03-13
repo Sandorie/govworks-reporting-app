@@ -31,13 +31,13 @@ def main():
     Entry point for the script.
     Render a template and write it to file.
     :return:
-    """
+   """ """
     with open("outputs/report.html", "w") as f:
         f.write(base_template.render(
             title=title,
             sections=sections
         ))
-
+"""
 
 if __name__ == "__main__":
     main()

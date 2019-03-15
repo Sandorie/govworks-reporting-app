@@ -1,10 +1,17 @@
 import pandas as pd 
+import os 
 from jinja2 import FileSystemLoader, Environment
 
 
 #The following comand line allows for wide columns - if not, columns will be spaced and ellipsed 
 pd.set_option("display.max_colwidth", 200)
 
+class ModelResults:
+    """
+    Use this class to store the results of a model run and associated data
+    """
+
+    
 def csv_to_html(filepath):
     """
     This will open a .csv file and return it in a HTML format.

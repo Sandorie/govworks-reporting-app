@@ -1,4 +1,4 @@
-import pandas as pd sys.path.insert(0,/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages)
+import pandas as pd 
 from jinja2 import FileSystemLoader, Environment
 
 

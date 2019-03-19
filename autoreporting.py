@@ -1,7 +1,7 @@
 import os
 import imp
 
-import pandas 
+import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 
 try:
@@ -15,7 +15,7 @@ except ImportError:
 
 
 #The following comand line allows for wide columns - if not, columns will be spaced and ellipsed 
-pandas.set_option("display.max_colwidth", 200)
+pd.set_option("display.max_colwidth", 200)
 
 class ModelResults:
     def __init__(self, model_name, filepath):
@@ -24,7 +24,7 @@ class ModelResults:
         :param filepath: Filepath to results .csv.
         """
         self.model_name = model_name
-        self.filepath = filepaths
+        self.filepath = filepath
 
         self.dataset = os.path.split(filepath)[-1]
         self.df_results = csv_to_df(filepath)  # Filesystem access
@@ -69,7 +69,7 @@ def csv_to_df(filepath):
     :param filepath: Filepath to a .csv file to be read.
     :return: .csv file in DataFrame format.
     """
-    df = pandas.read_csv(filepath, index_col=0)
+    df = pd.read_csv(filepath, index_col=0)
     return df
 
 

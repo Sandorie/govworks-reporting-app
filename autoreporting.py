@@ -110,13 +110,13 @@ def main():
     vgg19_model = ModelResults("VGG19", "./datasets/VGG19_results.csv")
     vgg19_results = vgg19_model.get_results_df_as_html()
 
-    mobilenet_model = ModelResults("MobileNet", "./datasets/MobileNet_results.csv")
+    mobilenet_model = ModelResults("MobileNet", "./datasets/mobilenet_results.csv")
     mobilenet_results = mobilenet_model.get_results_df_as_html()
 
     #Content to be published 
     title = "Model Report"
     vgg19_results = ModelResults("VGG19", "datasets/VGG19_results.csv")
-    mobilenet_results = ModelResults("MobileNet", "datasets/MobilNet_results.csv")
+    mobilenet_results = ModelResults("MobileNet", "datasets/mobilnet_results.csv")
     number_misidentified = len(set(vgg19_results.misidentified_images) & set(mobilenet_results.misidentified_images))
 
     # This is used to produce section block.

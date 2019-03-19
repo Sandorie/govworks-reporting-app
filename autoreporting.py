@@ -95,7 +95,9 @@ env = Environment(
 )
 
 #Use this to assemble the templates
+# Assemble the templates we'll use
 base_template = env.get_template("report.html")
+summary_section_template = env.get_template("summary_section.html")
 table_section_template = env.get_template("table_section.html")
 
 
@@ -116,28 +118,27 @@ def main():
 
     #Content to be published 
     title = "Model Report"
-    print(title)
     vgg19_results = ModelResults("VGG19", "datasets/VGG19_results.csv")
-    print(vgg19_results)
     mobilenet_results = ModelResults("MobileNet", "datasets/MobileNet_results.csv")
-    print(mobilenet_results)
     number_misidentified = len(set(vgg19_results.misidentified_images) & set(mobilenet_results.misidentified_images))
 
 
     # This is used to produce section block.
     sections = list()
+    sections.append(summary_section_template.render(
+    model_results_list=[vgg19_results, mobilenet_results],
+    number_misidentified=number_misidentified
+))
     sections.append(table_section_template.render(
-    model="VGG19",
-    dataset="VGG19_results.csv",
-    table="Table goes here."
-    ))
-    sections.append(vgg19_results)
+    model=vgg19_results.model_name,
+    dataset=vgg19_results.dataset,
+    table=vgg19_results.get_results_df_as_html())
+)
     sections.append(table_section_template.render(
-    model="MobileNet",
-    dataset="MobileNet_results.csv",
-    table="Table goes here."
-    ))
-    sections.append(mobilenet_results)
+    model=mobilenet_results.model_name,
+    dataset=mobilenet_results.dataset,
+    table=mobilenet_results.get_results_df_as_html())
+)
     
     with open("outputs/report.html", "w") as f:
         f.write(base_template.render(

@@ -5,7 +5,7 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 
 try:
-    import.find_module('pandas')
+    imp.find_module('pandas')
     found = True
     print("Did you find", found)
 except ImportError:

@@ -1,6 +1,17 @@
-import pandas as pd 
-import os 
-from jinja2 import FileSystemLoader, Environment
+import os
+import imp
+
+import pandas as pd
+from jinja2 import Environment, FileSystemLoader
+
+try:
+    imp.find_module('pandas')
+    found = True
+    print("Did you find", found)
+except ImportError:
+    found = False
+
+    print("Did you find", found)
 
 
 #The following comand line allows for wide columns - if not, columns will be spaced and ellipsed 

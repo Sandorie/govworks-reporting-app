@@ -115,6 +115,11 @@ def main():
 
     #Content to be published 
     title = "Model Report"
+    vgg19_results = ModelResults("VGG19", "datasets/VGG19_results.csv")
+    mobilenet_results = ModelResults("MobileNet", "datasets/MobilNet_results.csv")
+    number_misidentified = len(set(vgg19_results.misidentified_images) & set(mobilenet_results.misidentified_images))
+
+    # This is used to produce section block.
     sections = list()
     sections.append(table_section_template.render(
     model="VGG19",

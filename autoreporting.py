@@ -116,8 +116,11 @@ def main():
 
     #Content to be published 
     title = "Model Report"
+    print(title)
     vgg19_results = ModelResults("VGG19", "datasets/VGG19_results.csv")
+    print(vgg19_results)
     mobilenet_results = ModelResults("MobileNet", "datasets/MobileNet_results.csv")
+    print(mobilenet_results)
     number_misidentified = len(set(vgg19_results.misidentified_images) & set(mobilenet_results.misidentified_images))
 
 

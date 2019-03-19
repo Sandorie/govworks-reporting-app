@@ -106,13 +106,14 @@ def main():
     Render a template and write it to file.
     :return:
    """ 
+    """
     print("main")
     vgg19_model = ModelResults("VGG19", "dataset/vgg19_results.csv")
     vgg19_results = vgg19_model.get_results_df_as_html()
 
     mobilenet_model = ModelResults("MobileNet", "dataset/mobilenet_results.csv")
     mobilenet_results = mobilenet_model.get_results_df_as_html()
-
+"""
     #Content to be published 
     title = "Model Report"
     vgg19_results = ModelResults("VGG19", "dataset/vgg19_results.csv")
